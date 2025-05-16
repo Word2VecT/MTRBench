@@ -1,0 +1,50 @@
+05/15 14:27:13 - OpenCompass - INFO - Task [InternVL3-8B-vllm/funny_QA_pass5_3,InternVL3-8B-vllm/funny_QA_pass5_temp0.6_3,InternVL3-8B-vllm/funny_en_QA_pass5_3,InternVL3-8B-vllm/funny_en_QA_pass5_temp0.6_3]
+INFO 05-15 14:27:22 __init__.py:190] Automatically detected platform cuda.
+Traceback (most recent call last):
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 358, in http_get
+    import hf_transfer  # type: ignore[no-redef]
+ModuleNotFoundError: No module named 'hf_transfer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/transformers/configuration_utils.py", line 653, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/transformers/utils/hub.py", line 342, in cached_file
+    resolved_file = hf_hub_download(
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1011, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1547, in _download_to_tmp_and_move
+    http_get(
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 360, in http_get
+    raise ValueError(
+ValueError: Fast download using 'hf_transfer' is enabled (HF_HUB_ENABLE_HF_TRANSFER=1) but 'hf_transfer' package is not available in your environment. Try `pip install hf_transfer`.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/tasks/openicl_infer.py", line 161, in <module>
+    inferencer.run()
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/tasks/openicl_infer.py", line 73, in run
+    self.model = build_model_from_cfg(model_cfg)
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/utils/build.py", line 24, in build_model_from_cfg
+    return MODELS.build(model_cfg)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/mmengine/registry/registry.py", line 570, in build
+    return self.build_func(cfg, *args, **kwargs, registry=self)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+    obj = obj_cls(**args)  # type: ignore
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/models/vllm_with_tf_above_v4_33.py", line 40, in __init__
+    self.max_seq_len = _get_possible_max_seq_len(max_seq_len, path)
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/models/huggingface_above_v4_33.py", line 50, in _get_possible_max_seq_len
+    config = AutoConfig.from_pretrained(path, trust_remote_code=True)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/transformers/models/auto/configuration_auto.py", line 1075, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/transformers/configuration_utils.py", line 594, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/transformers/configuration_utils.py", line 676, in _get_config_dict
+    raise EnvironmentError(
+OSError: Can't load the configuration of 'OpenGVLab/InternVL3-8B'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'OpenGVLab/InternVL3-8B' is the correct path to a directory containing a config.json file

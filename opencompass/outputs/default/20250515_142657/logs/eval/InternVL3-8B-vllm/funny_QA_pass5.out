@@ -1,0 +1,5 @@
+INFO 05-15 14:27:47 __init__.py:190] Automatically detected platform cuda.
+funny_QA_pass5 test 250
+funny_QA_pass5 train 0
+05/15 14:27:50 - OpenCompass - ERROR - /mnt/petrelfs/tangzinan/opencompass/opencompass/tasks/openicl_eval.py - _score - 292 - Task [InternVL3-8B-vllm/funny_QA_pass5]: No predictions found.
+05/15 14:27:50 - OpenCompass - INFO - time elapsed: 14.93s

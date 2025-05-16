@@ -1,0 +1,5 @@
+dataset,version,metric,mode,InternVL3-8B-vllm
+funny_QA_pass5,-,-,-,-
+funny_QA_pass5_temp0.6,-,-,-,-
+funny_en_QA_pass5,-,-,-,-
+funny_en_QA_pass5_temp0.6,-,-,-,-

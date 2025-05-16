@@ -1,0 +1,18 @@
+05/15 14:49:50 - OpenCompass - INFO - Task [InternVL3-8B-vllm/funny_QA_2,InternVL3-8B-vllm/funny_pass5_temp0.6_QA_6,InternVL3-8B-vllm/funny_en_pass5_temp0.6_QA_2]
+INFO 05-15 14:50:03 __init__.py:190] Automatically detected platform cuda.
+Traceback (most recent call last):
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/tasks/openicl_infer.py", line 161, in <module>
+    inferencer.run()
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/tasks/openicl_infer.py", line 73, in run
+    self.model = build_model_from_cfg(model_cfg)
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/utils/build.py", line 24, in build_model_from_cfg
+    return MODELS.build(model_cfg)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/mmengine/registry/registry.py", line 570, in build
+    return self.build_func(cfg, *args, **kwargs, registry=self)
+  File "/mnt/petrelfs/tangzinan/anaconda3/envs/compass/lib/python3.10/site-packages/mmengine/registry/build_functions.py", line 121, in build_from_cfg
+    obj = obj_cls(**args)  # type: ignore
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/models/vllm_with_tf_above_v4_33.py", line 40, in __init__
+    self.max_seq_len = _get_possible_max_seq_len(max_seq_len, path)
+  File "/mnt/petrelfs/tangzinan/opencompass/opencompass/models/huggingface_above_v4_33.py", line 59, in _get_possible_max_seq_len
+    raise ValueError('max_seq_len is not provided and cannot be inferred from the model config.')
+ValueError: max_seq_len is not provided and cannot be inferred from the model config.
